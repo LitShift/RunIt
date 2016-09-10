@@ -16,5 +16,29 @@
     <div id="container">
       <div id="animate">何分に駅に付きたいですか？</div>
     </div>
+    <div id="timeAsk">
+      <form>
+        <div id="textEdit"><input type="text" name="firstname" value="数字だけでお願いします。" id="timesub"></div>
+        <div id="submitt"><input type="submit" value="決定" onclick="submitNix()"></div>
+      </form>
+    </div>
+    
+    <script>
+    int askNum = 1;
+    
+    function submitNix() {
+    if(askNum==1) {
+        int t = document.getElementById("timesub").value;
+        document.getElementById("animate").innerHTML="道のりは何メートルありますか？"
+        askNum = 2;
+    }
+    else{
+      int d = document.getElementById("timesub").value;
+      int time = d/t-w;
+      time = time*t/r*60
+      document.getElementById("animate").innerHTML = time + "分走ると間に合います。"
+    }
+  }
+    </script>
   </body>
 </html>
